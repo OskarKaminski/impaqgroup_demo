@@ -1,9 +1,10 @@
 var gulp = require('gulp');
 var babel = require('gulp-babel');
+var webserver = require('gulp-webserver');
 
 var paths = {
-    es6: ['./src/**/*.js'],
-    filesToCopy: ['./src/**/*'],
+    es6: ['./src/**/*.es6'],
+    filesToCopy: ['./src/**/*', '!./src/**/*.es6'],
     bower: ['./bower_components/**/*']
 };
 
@@ -27,5 +28,14 @@ gulp.task('copyFiles', function () {
 
 gulp.task('copyLibs', function () {
     return gulp.src(paths.bower)
-        .pipe(gulp.dest('./dist/public/vendor'));
+        .pipe(gulp.dest('./dist/vendor'));
+});
+
+gulp.task('webserver', function() {
+    gulp.src('./dist/')
+        .pipe(webserver({
+            livereload: true,
+            open: true,
+            port: 3000
+        }));
 });
