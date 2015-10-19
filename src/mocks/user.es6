@@ -63,5 +63,5 @@ angular.module('userMock', ['ngMockE2E']).run(function($httpBackend){
         });
     });
 
-    $httpBackend.whenGET(/content/).passThrough();
+    $httpBackend.whenGET(/\.html$/).passThrough();
 })

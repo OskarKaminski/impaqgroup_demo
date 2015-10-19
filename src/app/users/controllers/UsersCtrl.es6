@@ -1,13 +1,7 @@
-angular.module('app').controller('UsersCtrl', function($scope, UserSvc){
+angular.module('app').controller('UsersCtrl', function($scope, UserSvc, PubSubChannelSvc){
     $scope.users = UserSvc.query();
 
-    $scope.save = (user)=>{
-        user.$save();
-    }
-
-    $scope.remove = (user, i)=>{
-        user.$remove(function() {
-            $scope.users.splice(i, 1);
-        });
+    $scope.editMany = ()=>{
+        PubSubChannelSvc.editData();
     }
 });
