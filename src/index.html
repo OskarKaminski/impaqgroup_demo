@@ -27,7 +27,7 @@
         </tr>
         </thead>
         <tbody>
-            <tr editable-row ng-repeat="user in users" obj="user"></tr>
+            <tr editable-row ng-repeat="user in users" obj="user" remove-entry="removeEntry({entry: entry, index: $index})"></tr>
         </tbody>
     </table>
 </div>

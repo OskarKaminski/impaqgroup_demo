@@ -4,4 +4,10 @@ angular.module('app').controller('UsersCtrl', function($scope, UserSvc, PubSubCh
     $scope.editMany = ()=>{
         PubSubChannelSvc.editData();
     }
+
+    $scope.removeEntry = (element)=>{
+        element.entry.$remove(function(){
+            $scope.users.splice(element.index, 1);
+        })
+    }
 });
