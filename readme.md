@@ -3,6 +3,8 @@ IMPAQgroup demo
 
 This is demo application for recruitment purposes
 
+[Let's see live demo](https://impaqdemo.herokuapp.com/)
+
 Instruction:
 Prepare an application that will download from an external file users.json data and displays them in a table on the screen.
 
@@ -36,5 +38,3 @@ find:
 **mock/stub the database**
 
 **concentrate on proper design and clean code, rather than UI design**
-
-[Let's see live demo](https://impaqdemo.herokuapp.com/)
